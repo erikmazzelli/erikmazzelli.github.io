@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+
+  <title></title>
+</head>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+  }
+
+
+  .container {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  canvas {
+    display: block;
+    position: absolute;
+    z-index: -1;
+  }
+
+  .textContainer {
+    background-color: red;
+    padding: 24px;
+    border-radius: 24px;
+    color: #fff;
+  }
+</style>
+
+<body>
+  <div class='container'>
+    <canvas id="matrix">
+    </canvas>
+
+    <div class='textContainer'>Erik Mazzelli</div>
+  </div>
+</body>
+
+<script>
+  const c = document.getElementById('matrix');
+  const ctx = c.getContext('2d');
+
+  c.height = window.innerHeight;
+  c.width = window.innerWidth;
+
+  const letters = [
+    '日',
+    'ﾊ',
+    'ﾐ',
+    'ﾋ',
+    'ｰ',
+    'ｳ',
+    'ｼ',
+    'ﾅ',
+    'ﾓ',
+    'ﾆ',
+    'ｻ',
+    'ﾜ',
+    'ﾂ',
+    'ｵ',
+    'ﾘ',
+    'ｱ',
+    'ﾎ',
+    'ﾃ',
+    'ﾏ',
+    'ｹ',
+    'ﾒ',
+    'ｴ',
+    'ｶ',
+    'ｷ',
+    'ﾑ',
+    'ﾕ',
+    'ﾗ',
+    'ｾ',
+    'ﾈ',
+    'ｽ',
+    'ﾀ',
+    'ﾇ',
+    'ﾍ',
+    ':',
+    '・',
+    '.',
+    '=',
+    '*',
+    '+',
+    '-',
+    '<',
+    '>',
+    '¦',
+    '｜',
+    'ﾘ',
+  ];
+  const fontSize = 18;
+  const columns = c.width / fontSize;
+  const drops = new Array(Math.floor(columns)).fill(1);
+
+  function draw() {
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+    ctx.fillRect(0, 0, c.width, c.height);
+    ctx.fillStyle = '#0F0';
+    ctx.font = `${fontSize}px arial`;
+
+    for (let i = 0; i < drops.length; i++) {
+      const text = letters[Math.floor(Math.random() * letters.length)];
+
+      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+      drops[i]++;
+
+      if (drops[i] * fontSize > c.height && Math.random() > 0.95) {
+        drops[i] = 0;
+      }
+    }
+
+    window.requestAnimationFrame(draw);
+  }
+
+  draw();
+</script>
+
+</html>

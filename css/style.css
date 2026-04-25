@@ -30,9 +30,9 @@ canvas {
 .glassContainer {
   padding: 32px;
   border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0, 255, 0, 0.1);
-  background: rgba(0, 20, 0, 0.7);
-  border: 1px solid rgba(0, 255, 0, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  background: rgba(10, 10, 10, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   margin-bottom: 30px;
@@ -40,8 +40,8 @@ canvas {
 }
 
 .glassContainer:hover {
-  box-shadow: 0 8px 32px rgba(0, 255, 0, 0.2);
-  border: 1px solid rgba(0, 255, 0, 0.4);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .hero {
@@ -50,32 +50,30 @@ canvas {
 }
 
 .title {
-  color: #0f0;
+  color: #ffffff;
   font-size: 3rem;
   text-align: center;
   margin-bottom: 10px;
-  text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
 }
 
 .subtitle {
-  color: #0f0;
+  color: #c0c0c0;
   font-size: 1.5rem;
   margin-bottom: 20px;
   opacity: 0.8;
 }
 
 .description {
-  color: #0f0;
+  color: #b8b8b8;
   font-size: 1rem;
   line-height: 1.8;
   opacity: 0.9;
 }
 
 .section-title {
-  color: #0f0;
+  color: #e0e0e0;
   font-size: 2rem;
   margin-bottom: 20px;
-  text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
 }
 
 .skills-grid {
@@ -86,17 +84,17 @@ canvas {
 }
 
 .skill-item {
-  background: rgba(0, 255, 0, 0.1);
+  background: rgba(255, 255, 255, 0.05);
   padding: 15px;
   border-radius: 8px;
-  border: 1px solid rgba(0, 255, 0, 0.3);
-  color: #0f0;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #c8c8c8;
   text-align: center;
   transition: all 0.3s ease;
 }
 
 .skill-item:hover {
-  background: rgba(0, 255, 0, 0.2);
+  background: rgba(255, 255, 255, 0.1);
   transform: translateY(-5px);
 }
 
@@ -108,34 +106,40 @@ canvas {
 }
 
 .project-card {
-  background: rgba(0, 20, 0, 0.6);
+  background: rgba(15, 15, 15, 0.6);
   padding: 25px;
   border-radius: 12px;
-  border: 1px solid rgba(0, 255, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-links {
+  margin-top: auto;
 }
 
 .project-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 10px 30px rgba(0, 255, 0, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .project-title {
-  color: #0f0;
+  color: #e0e0e0;
   font-size: 1.3rem;
   margin-bottom: 10px;
 }
 
 .project-desc {
-  color: #0f0;
+  color: #b0b0b0;
   opacity: 0.8;
   margin-bottom: 15px;
   line-height: 1.6;
 }
 
 .project-tech {
-  color: #0f0;
-  opacity: 0.6;
+  color: #888888;
+  opacity: 0.9;
   font-size: 0.85rem;
   margin-bottom: 15px;
 }
@@ -147,9 +151,9 @@ canvas {
 
 .btn {
   padding: 10px 20px;
-  background: rgba(0, 255, 0, 0.2);
-  border: 1px solid #0f0;
-  color: #0f0;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #c8c8c8;
   text-decoration: none;
   border-radius: 6px;
   transition: all 0.3s ease;
@@ -158,14 +162,22 @@ canvas {
 }
 
 .btn:hover {
-  background: rgba(0, 255, 0, 0.3);
-  box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.45);
+  color: #ffffff;
+}
+
+.btn[target="_blank"]::after {
+  content: ' ↗';
+  font-size: 0.75em;
+  opacity: 0.7;
+  vertical-align: super;
 }
 
 .timeline {
   position: relative;
   padding-left: 30px;
-  border-left: 2px solid rgba(0, 255, 0, 0.3);
+  border-left: 2px solid rgba(255, 255, 255, 0.12);
 }
 
 .timeline-item {
@@ -180,27 +192,24 @@ canvas {
   top: 0;
   width: 12px;
   height: 12px;
-  background: #0f0;
+  background: #888;
   border-radius: 50%;
-  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
 }
 
 .timeline-title {
-  color: #0f0;
+  color: #e0e0e0;
   font-size: 1.2rem;
   margin-bottom: 5px;
 }
 
 .timeline-date {
-  color: #0f0;
-  opacity: 0.6;
+  color: #888888;
   font-size: 0.9rem;
   margin-bottom: 10px;
 }
 
 .timeline-desc {
-  color: #0f0;
-  opacity: 0.8;
+  color: #a8a8a8;
   line-height: 1.6;
 }
 
@@ -212,16 +221,16 @@ canvas {
 }
 
 .contact-item {
-  background: rgba(0, 255, 0, 0.1);
+  background: rgba(255, 255, 255, 0.05);
   padding: 20px;
   border-radius: 8px;
-  border: 1px solid rgba(0, 255, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   text-align: center;
   transition: all 0.3s ease;
 }
 
 .contact-item:hover {
-  background: rgba(0, 255, 0, 0.2);
+  background: rgba(255, 255, 255, 0.1);
   transform: scale(1.05);
 }
 
@@ -231,13 +240,13 @@ canvas {
 }
 
 .contact-link {
-  color: #0f0;
+  color: #c8c8c8;
   text-decoration: none;
   transition: all 0.3s ease;
 }
 
 .contact-link:hover {
-  text-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
+  color: #ffffff;
 }
 
 @media (max-width: 1024px) {

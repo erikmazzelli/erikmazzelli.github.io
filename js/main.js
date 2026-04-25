@@ -63,7 +63,7 @@ const drops = new Array(Math.floor(columns)).fill(1);
 function draw() {
   ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
   ctx.fillRect(0, 0, c.width, c.height);
-  ctx.fillStyle = '#0F0';
+  ctx.fillStyle = '#c8c8c8';
   ctx.font = `${fontSize}px arial`;
 
   for (let i = 0; i < drops.length; i++) {
